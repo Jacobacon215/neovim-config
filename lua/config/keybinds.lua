@@ -13,6 +13,13 @@ vim.api.nvim_set_keymap("v", "l", "j", { noremap = true })
 vim.api.nvim_set_keymap("v", "j", "h", { noremap = true })
 vim.api.nvim_set_keymap("v", "k", "k", { noremap = true })
 
--- custom little doodads
+-- copy to system clipboard
+vim.api.nvim_set_keymap("v", "<A-y>", '"+y', { noremap = true })
+vim.api.nvim_set_keymap("n", "<A-y>y", '<S-v>"+y', { noremap = true })
+
+-- insert blank lines
 vim.api.nvim_set_keymap("n", "<Return>", "o<Esc>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<S-Return>", "O<Esc>", { noremap = true })
+
+-- csync hotkey
+vim.api.nvim_set_keymap("n", "<C-c>", ":!csync<Return>", { noremap = true })
